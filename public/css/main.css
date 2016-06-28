@@ -6,11 +6,17 @@
   padding: 10px;
 }
 
+.row {
+  width: 25%;
+  margin: 0 auto;
+}
+
 .cell {
   width: 25px;
   height: 25px;
   background-color: white;
   display: inline-block;
+  margin-bottom: -5px;
 }
 
 .border {
