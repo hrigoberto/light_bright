@@ -4,17 +4,30 @@ var numOfRows = 10;
 var numOfCols = 10;
 
   initGrid();
-  addClickHandlers();
+  // addClickHandlers();
+  addClickHandlers2();
+
+  function addClickHandlers2(){
+      var cells = $('.cell');
+      cells.on('click', changeColor);
+  }
+
   function changeColor(){
-    console.log('I am changing!')
+    var colorClasses = ['white', 'red', 'green', 'blue'];
+    var colorCycle = Math.round(Math.random() * colorClasses.length);
+    console.log(colorCycle);
+    var color = colorClasses[colorCycle];
+    $(this).removeClass(colorClasses.join(' '));
+    $(this).addClass(color);
+    colorCycle += 1;
   }
-  function addClickHandlers(){
-    var cells = $('.cell');
-    for(var counter = 0; counter < cells.length; counter += 1){
-      var cell = cells[counter];
-      $(cell).on('click', changeColor);
-    }
-  }
+  // function addClickHandlers(){
+  //   var cells = $('.cell');
+  //   for(var counter = 0; counter < cells.length; counter += 1){
+  //     var cell = cells[counter];
+  //     $(cell).on('click', changeColor);
+  //   }
+  // }
   function initGrid(){
       for(var i = 0; i < numOfRows; i += 1){
         var row = $('<div></div>');
