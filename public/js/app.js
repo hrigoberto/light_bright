@@ -1,11 +1,12 @@
 $(document).ready(function(){
 var container = $('.container');
-var numOfRows = 10;
-var numOfCols = 10;
+var numOfRows = $('#Rows').val();
+var numOfCols = $('#Columns').val();
+var submit = $('#submit')
 
-  initGrid();
+  submit.on('submit', initGrid);
   // addClickHandlers();
-  addClickHandlers2();
+  submit.on('submit', addClickHandlers2);
 
   function addClickHandlers2(){
       var cells = $('.cell');
