@@ -1,16 +1,22 @@
 $(document).ready(function(){
 var container = $('.container');
-var numOfRows = $('#Rows').val();
-var numOfCols = $('#Columns').val();
+var numOfRows = $('#Rows')
+var numOfCols = $('#Columns')
 var submit = $('#submit')
 
-  submit.on('submit', initGrid);
+  submit.on('click', initGrid);
   // addClickHandlers();
-  submit.on('submit', addClickHandlers2);
+  submit.on('click', addClickHandlers2);
+  submit.on('click', testFunction);
 
   function addClickHandlers2(){
       var cells = $('.cell');
       cells.on('click', changeColor);
+  }
+
+  function testFunction(){
+    console.log(numOfRows);
+    console.log(numOfCols);
   }
 
   function changeColor(){
@@ -30,10 +36,10 @@ var submit = $('#submit')
   //   }
   // }
   function initGrid(){
-      for(var i = 0; i < numOfRows; i += 1){
+      for(var i = 0; i < numOfRows.val(); i += 1){
         var row = $('<div></div>');
         row.addClass('row');
-        for(var j = 0; j < numOfCols; j += 1){
+        for(var j = 0; j < numOfCols.val(); j += 1){
           var cell = $('<div></div>');
           cell.addClass('cell border');
           row.append(cell);
